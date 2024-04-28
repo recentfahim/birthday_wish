@@ -8,6 +8,7 @@ class CustomUser(AbstractUser):
     """
     CustomUser model will be use for email authentication
     """
+    username = None
     email = models.EmailField(unique=True, max_length=256)
     date_of_birth = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
