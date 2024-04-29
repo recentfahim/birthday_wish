@@ -22,5 +22,30 @@ services:
     depends_on:
       - db
 
+  redis:
+    image: redis:latest
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+
+  celery_worker:
+    build: .
+    command: celery -A birthday_wish worker --loglevel=INFO
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+
+  celery_beat:
+    build: .
+    command: celery -A birthday_wish beat --loglevel=INFO
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+
+
 volumes:
   mysql_data:
+  redis_data:
