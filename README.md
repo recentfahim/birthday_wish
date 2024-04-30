@@ -122,7 +122,7 @@ To run test of the API
 docker-compose exec web python manage.py test
 ```
 
-When you up the docker it'll run the scheduler automatically. I've added a test scheduler `test_sum`, it'll run every one minute. Just to see if it's working.
+When you up the docker it'll run the scheduler automatically. I've added a test scheduler `test_sum`, it'll run every 10 minute. Just to see if it's working.
 
 The birthday scheduler is configurable from settings you can change the value of `BIRTHDAY_WISH_HOUR` and `BIRTHDAY_WISH_MINUTE` it'll auto run the birthday wish in that time of the day.
 

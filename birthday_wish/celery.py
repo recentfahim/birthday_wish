@@ -17,7 +17,7 @@ app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 app.conf.beat_schedule = {
     'test_sum_task': {
         'task': 'users.tasks.test_sum',
-        'schedule': 10.0
+        'schedule': 600
     },
     'wish_user_task': {
         'task': 'users.tasks.wish_user',
