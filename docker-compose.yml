@@ -10,6 +10,9 @@ services:
       MYSQL_DATABASE: birthwish
       MYSQL_USER: birthwish
       MYSQL_PASSWORD: corp_2
+      MYSQL_DATABASE_TEST: test_birthwish
+      MYSQL_USER_TEST: birthwish
+      MYSQL_PASSWORD_TEST: corp_2
     volumes:
       - mysql_data:/var/lib/mysql
   web:
